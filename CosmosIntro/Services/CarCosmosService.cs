@@ -2,7 +2,6 @@
 using CosmosIntro.Models;
 using Microsoft.Azure.Cosmos;
 using Microsoft.Azure.Cosmos.Fluent;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -11,15 +10,18 @@ namespace CosmosIntro.Services
 {
     public class CarCosmosService : ICarCosmosService
     {
-        private const string _connectionString = "AccountEndpoint=https://cosmos-intro-westus2.documents.azure.com:443/;AccountKey=3voP9lZoh8pITszxmSROwn53MN23hD0Qi1grlB7DIMwsi5cDpfzCNg6JQJ7Lp5O6u1dAQbiA9IA1DleqWs9REQ==;";
+        
+        private const string _connectionString = "<AccountEndpoint>";
         private const string _dataBaseId = "cosmos-intro-db";
         private const string _containerId = "cars";
         private readonly Container _container;
+
         public CarCosmosService()
         {
             var client = new CosmosClientBuilder(_connectionString).Build();
             this._container = client.GetContainer(_dataBaseId, _containerId);
         }
+
         public async Task<IEnumerable<Car>> GetAllAsync()
         {
             var querDefinition = "SELECT * FROM c";

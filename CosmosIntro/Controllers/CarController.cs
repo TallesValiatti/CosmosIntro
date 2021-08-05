@@ -14,10 +14,12 @@ namespace CosmosIntro.Controllers
     public class CarController : ControllerBase
     {
         private readonly ICarCosmosService _carCosmosService;
+
         public CarController(ICarCosmosService carCosmosService)
         {
             _carCosmosService = carCosmosService;
         }
+
         [HttpGet]
         public async Task<IActionResult> GetAllAsync() 
         {
