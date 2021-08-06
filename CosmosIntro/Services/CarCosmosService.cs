@@ -9,8 +9,7 @@ using System.Threading.Tasks;
 namespace CosmosIntro.Services
 {
     public class CarCosmosService : ICarCosmosService
-    {
-        
+    {   
         private const string _connectionString = "<AccountEndpoint>";
         private const string _dataBaseId = "cosmos-intro-db";
         private const string _containerId = "cars";

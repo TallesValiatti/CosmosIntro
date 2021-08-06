@@ -7,7 +7,6 @@ namespace CosmosIntro.Interfaces
     public interface ICarCosmosService
     {
         Task<IEnumerable<Car>> GetAllAsync();
-        
         Task SaveAsync(Car item);
     }
 }
